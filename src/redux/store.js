@@ -1,15 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga"
-import movieReducer  from "./slice/movieSlice";
+import { movieReducer }  from "./slice/movieSlice";
 import rootSaga from "../saga/rootSaga";
 
-const sagaMiddleware = createSagaMiddleware();
+const saga = createSagaMiddleware();
  
 const store = configureStore({
     reducer: {
-        movie: movieReducer
+        movies: movieReducer
     },
-    middleware: sagaMiddleware
+    middleware: [saga]
 });
 
 //sagaMiddleware.run(rootSaga);
