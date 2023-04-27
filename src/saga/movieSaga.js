@@ -7,7 +7,6 @@ function* onLoadMoviesAsync(action) {
     const movieName = action.payload;
     const response = yield call(fetchMovies, movieName);
     if (response.status === 200) {
-      console.log(response.data);
       yield put(setMovies(response.data));
     }
     if (response.data.Response === "False") {

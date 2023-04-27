@@ -27,7 +27,6 @@ const Search = () => {
       <form className={classes.form} onSubmit={(e) => e.preventDefault()}>
         <TextField type="text" fullWidth value={name} sx={{ m: 1, width: "55ch" }} onChange={(e) => setName(e.target.value)} />
       </form>
-      {console.log(requestFail)}
 
       {requestFail && <p className={classes.error}>{requestFailMessage}</p>}
     </>
